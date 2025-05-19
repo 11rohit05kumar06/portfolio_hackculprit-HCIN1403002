@@ -1,0 +1,181 @@
+/* Reset & Base */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4; color: #333;
+  transition: background .3s, color .3s;
+}
+.container {
+  width: 90%; max-width: 1100px; margin: auto; padding: 2rem 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: .7rem 1.5rem;
+  background: #333; color: #fff; border-radius: 5px;
+  transition: background .3s;
+}
+.btn:hover { background: #555; }
+
+/* Dark Mode Toggle */
+#darkToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+body.dark-mode .about,
+body.dark-mode .projects {
+  background: #1e1e1e;
+}
+body.dark-mode .skills,
+body.dark-mode .contact {
+  background: #181818;
+}
+body.dark-mode .btn {
+  background: #eee;
+  color: #121212;
+}
+body.dark-mode .btn:hover {
+  background: #ccc;
+}
+body.dark-mode footer {
+  background: #000;
+}
+body.dark-mode #darkToggle {
+  background: #333;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  height: 100vh; position: relative; display: flex;
+  align-items: center; text-align: center; color: #fff;
+}
+.hero::after {
+  content: ''; position: absolute; top:0;left:0;
+  width:100%; height:100%; background:rgba(0,0,0,.5);
+}
+.hero .container { position: relative; z-index: 1; }
+.profile-pic {
+  width: 140px; height: 140px; object-fit: cover;
+  border-radius: 50%; border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+section { margin-top: 2rem; }
+.about, .projects { background: #fff; padding: 4rem 0; }
+.skills, .contact { background: #f4f4f4; padding: 4rem 0; }
+
+/* Skills */
+.skill-bars { max-width:600px; margin:auto; }
+.skill { margin-bottom:1.5rem; }
+.skill p { font-weight:bold; margin-bottom:.5rem; }
+.bar {
+  background:#ddd; border-radius:20px; overflow:hidden;
+}
+.progress {
+  height:20px; width:0; transition: width 1s ease-in-out;
+}
+.progress.python { background: #f39c12; }
+.progress.java   { background: #2980b9; }
+.progress.html   { background: #e67e22; }
+.progress.sql    { background: #9b59b6; }
+.progress.ml     { background: #27ae60; }
+
+/* Projects */
+.project-list { display: flex; gap: 2rem; flex-wrap: wrap; }
+.project-list.single { justify-content: center; }
+.project {
+  background: #f4f4f4; padding:1rem; border-radius:10px;
+  width: 300px; text-align: center;
+}
+.project img {
+  width:100%; border-radius:10px; margin-bottom:1rem;
+}
+
+/* Contact */
+.contact form {
+  max-width:600px; margin:auto; text-align:left;
+}
+.contact input, .contact textarea {
+  width:100%; padding:1
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .socials a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+footer .socials a:hover {
+  color: #00bfff;
+}
+
+/* BacktoTop */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+#backToTop:hover {
+  background: #555;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
